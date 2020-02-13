@@ -1,4 +1,8 @@
-  <!-- Page Header Start -->
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+  redirect('/', 'refresh');
+} ?>
+<!-- Page Header Start -->
   <div class="page-header" style="background: url(assets/img/banner1.jpg);">
       <!--       <div class="container">
           <div class="row">
@@ -23,7 +27,7 @@
               <div class="col-lg-5 col-md-12 col-xs-12 card">
                   <div class="register-form login-area">
                       <h3>
-                          Register
+                          Sign up
                       </h3>
                       <div class="ajax_response_result" style="margin-top: 10px;"> </div>
                       <form class="login-form needs-validation" id="reg_form" method="POST" action="<?php echo base_url(); ?>main/register" novalidate>
@@ -92,10 +96,10 @@
                                       <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                                           <label class="form-check-label" for="invalidCheck">
-                                              Agree to terms and conditions
+                                              I Agree to the terms and conditions.
                                           </label>
                                           <div class="invalid-feedback">
-                                              You must agree before submitting.
+                                              You must agree to the terms and conditions before submitting.
                                           </div>
                                       </div>
                                   </div>
@@ -113,7 +117,7 @@
                                       </div>
                                   </div> -->
                                   <div class="text-center">
-                                      <button id="click_form_ccc" type="submit" class="btn btn-common">Register</button>
+                                      <button id="click_form_ccc" type="submit" class="btn btn-common">Sign up</button>
                                   </div>
 
                       </form>

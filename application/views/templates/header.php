@@ -26,9 +26,17 @@
   <!-- Responsive Style -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/responsive.css">
   <!-- alertify css -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- easy autocomplete CSS file  -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/easy-autocomplete.css">
+  <!-- easy autocomplete CSS file  -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/easy-autocomplete.themes.css">
+  <!-- Light gallery CSS file  -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/lightgallery.css"/>
 
+  <link rel="icon" 
+      type="image/png" 
+      href="<?php echo base_url(); ?>assets/img/favicon.ico">
 </head>
 
 <body>
@@ -50,50 +58,61 @@
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item  <?php if($this->uri->segment(1)==""){echo "active";}?>">
+            <li class="nav-item  <?php if ($this->uri->segment(1) == "") {
+                                    echo "active";
+                                  } ?>">
               <a class="nav-link" href="<?php echo base_url(); ?>">
                 Home
               </a>
-             
+
             </li>
-            <li class="nav-item <?php if($this->uri->segment(1)=="aboutus"){echo "active";}?>">
+            <li class="nav-item <?php if ($this->uri->segment(1) == "aboutus") {
+                                  echo "active";
+                                } ?>">
               <a class="nav-link" href="<?php echo base_url(); ?>aboutus">
                 About us
               </a>
             </li>
-            <li class="nav-item <?php if($this->uri->segment(1)=="register"){echo "active";}?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>register">
-                Register
-              </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->segment(1)=="login" || $this->uri->segment(2)=="login"){echo "active";}?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>login">
-                Login
-              </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->segment(1)=="contact"){echo "active";}?>">
+ 
+            <li class="nav-item <?php if ($this->uri->segment(1) == "contact") {
+                                  echo "active";
+                                } ?>">
               <a class="nav-link" href="<?php echo base_url(); ?>contact">
                 Contact Us
               </a>
             </li>
-          
-       
+
+
 
           </ul>
           <ul class="sign-in">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i> My Account</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="<?php echo base_url(); ?>dashboard"><i class="lni-home"></i> Account Home</a>
-                <a class="dropdown-item" href="account-myads.html"><i class="lni-wallet"></i> My Ads</a>
-                <a class="dropdown-item" href="account-favourite-ads.html"><i class="lni-heart"></i> Favourite ads</a>
-                <a class="dropdown-item" href="account-archived-ads.html"><i class="lni-folder"></i> Archived</a>
-                <a class="dropdown-item" href="login.html"><i class="lni-lock"></i> Log In</a>
-                <a class="dropdown-item" href="signup.html"><i class="lni-user"></i> Signup</a>
-                <a class="dropdown-item" href="forgot-password.html"><i class="lni-reload"></i> Forgot Password</a>
-                <a class="dropdown-item" href="account-close.html"><i class="lni-close"></i>Account close</a>
-                <a class="dropdown-item" href="<?php echo base_url(); ?>main/logout"><i class="lni-close"></i>Logout</a>
-              </div>
+
+              <?php
+              if (isset($this->session->userdata['logged_in'])) {
+                $username = ($this->session->userdata['logged_in']['name']);
+                $email = ($this->session->userdata['logged_in']['email']);
+
+              ?>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i>Hi , <?php echo $username; ?>!</a>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="<?php echo base_url(); ?>dashboard"><i class="lni-home"></i> Dashboard</a>
+
+
+
+                  <a class="dropdown-item" href="<?php echo base_url(); ?>main/logout"><i class="lni-close"></i>Logout</a>
+                </div>
+              <?php } else {
+
+              ?>
+
+                <a class="nav-link dropdown-toggle" href="<?php echo base_url(); ?>login"><i class="lni-user"></i>Log in</a>
+                <a class="nav-link dropdown-toggle" href="<?php echo base_url(); ?>register"><i class="lni-user"></i>Sign up</a>
+              <?php
+              } ?>
+
+
             </li>
           </ul>
           <a class="tg-btn" href="post-ads.html">

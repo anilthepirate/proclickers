@@ -1,0 +1,11 @@
+[ 
+    {"name": "bangalore", "id": "AF"}, 
+    {"name": "chennai", "id": "AL"}, 
+    {"name": "delhi", "id": "DZ"}, 
+    {"name": "goa", "id": "AS"}, 
+    {"name": "hyderabad", "id": "AD"}, 
+    {"name": "kolkata", "id": "AO"}, 
+    {"name": "lucknow", "id": "AI"}, 
+    {"name": "mangalore", "id": "AG"}, 
+    {"name": "mumbai", "id": "AR"}
+  ]

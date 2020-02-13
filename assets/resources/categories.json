@@ -1,0 +1,35 @@
+[ 
+    {"name": "Pre-wedding", "id": 1}, 
+    {"name": "Wedding", "id": 2}, 
+    {"name": "Maternity", "id": 3}, 
+    {"name": "Post-wedding", "id": 4}, 
+    {"name": "Baby / Kids", "id": 5}, 
+    {"name": "Family Event", "id":6}, 
+    {"name": "Birthday", "id": 7},
+    {"name": "Mehndi", "id": 8},
+    {"name": "Travel / Vacation", "id": 9},
+    {"name": "Drone / Aerial", "id": 10},
+    {"name": "Sports / Action", "id": 11},
+    {"name": "Portfolio / Fashion", "id": 12},
+    {"name": "Candid", "id": 13},
+    {"name": "Real Estate / Interiors", "id": 14},
+    {"name": "Food", "id": 15},
+    {"name": "Corporate Event", "id": 16},
+    {"name": "International Event", "id": 17},
+    {"name": "Videography / Cinematography", "id": 18}
+  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
